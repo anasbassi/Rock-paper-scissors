@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay(){
+            let computer = ["rock", "paper", "scissor"];
+            const random =computer[Math.floor(Math.random()*computer.length)];
+            return random;
+        }
+        function playRound(playerSelection, computerSelection){
+            let result ="";
+            if(((playerSelection.toLowerCase()=="rock")&&(computerSelection.toLowerCase()=="scissor"))||
+            ((playerSelection.toLowerCase()=="scissor")&&(computerSelection.toLowerCase()=="paper"))||
+            ((playerSelection.toLowerCase()=="paper")&&(computerSelection.toLowerCase()=="rock"))){
+                result ="You Win!";
+            }else if (((computerSelection.toLowerCase()=="rock")&&(playerSelection.toLowerCase()=="scissor"))||
+            ((computerSelection.toLowerCase()=="scissor")&&(playerSelection.toLowerCase()=="paper"))||
+            ((computerSelection.toLowerCase()=="paper")&&(playerSelection.toLowerCase()=="rock"))){
+                result ="You Loose!";
+            }else {
+                result = "Draw!";
+            }
+            return result;
+        }
+        const playerSelection = "rock";
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+    </script>
+</body>
+</html>
